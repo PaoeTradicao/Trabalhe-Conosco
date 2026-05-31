@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabalhe Conosco — Pão & Tradição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#13215E;--ouro:#EFAD4C;--creme:#F5F0DC;--ouro-escuro:#c8891a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--azul);color:var(--creme);overflow-x:hidden}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:3rem 1.5rem;text-align:center;background:var(--azul)}
+.hero-bg{position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,var(--ouro) 0,var(--ouro) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-logo{width:160px;max-width:55vw;margin-bottom:1.5rem;animation:fadeUp .8s ease both}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);color:var(--ouro);margin-bottom:.5rem;animation:fadeUp .9s .1s ease both}
+.hero-sub{font-size:.95rem;color:var(--creme);opacity:.7;letter-spacing:.12em;text-transform:uppercase;animation:fadeUp 1s .2s ease both}
+.hero-divider{width:50px;height:2px;background:var(--ouro);margin:1.2rem auto;animation:fadeUp 1s .3s ease both}
+.hero-texto{max-width:520px;font-size:1rem;line-height:1.8;color:var(--creme);opacity:.9;animation:fadeUp 1s .4s ease both}
+.hero-texto em{color:var(--ouro);font-style:normal;font-weight:700}
+
+/* SECOES */
+.secao{padding:4rem 1.5rem;max-width:700px;margin:0 auto}
+.secao-titulo{font-family:'Playfair Display',serif;color:var(--ouro);font-size:1.5rem;margin-bottom:1.5rem;text-align:center}
+.secao-titulo::after{content:'';display:block;width:40px;height:2px;background:var(--ouro);margin:.6rem auto 0;opacity:.5}
+
+/* BENEFICIOS */
+.beneficios-bg{background:rgba(255,255,255,.04);border-top:1px solid rgba(239,173,76,.2);border-bottom:1px solid rgba(239,173,76,.2)}
+.beneficios-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.beneficio-card{background:rgba(255,255,255,.06);border:1px solid rgba(239,173,76,.2);border-radius:10px;padding:1.2rem;display:flex;align-items:flex-start;gap:.8rem;transition:background .2s}
+.beneficio-card:hover{background:rgba(239,173,76,.1)}
+.beneficio-icone{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.beneficio-texto{font-size:.88rem;color:var(--creme);line-height:1.5}
+.beneficio-texto strong{color:var(--ouro);display:block;margin-bottom:2px;font-size:.9rem}
+
+/* PERFIL */
+.perfil-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.perfil-item{background:rgba(255,255,255,.05);border-radius:10px;padding:1.2rem;text-align:center;border:1px solid rgba(239,173,76,.15);transition:border-color .2s}
+.perfil-item:hover{border-color:var(--ouro)}
+.perfil-item .pi-icone{font-size:2rem;margin-bottom:.5rem}
+.perfil-item .pi-nome{font-size:.88rem;color:var(--creme);font-weight:700}
+
+/* CTA */
+.cta-bg{background:var(--ouro);padding:3rem 1.5rem;text-align:center}
+.cta-bg h2{font-family:'Playfair Display',serif;color:var(--azul);font-size:1.6rem;margin-bottom:.6rem}
+.cta-bg p{color:var(--azul);font-size:.9rem;opacity:.8;max-width:480px;margin:0 auto 2rem;line-height:1.6}
+.cta-botoes{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:flex;align-items:center;gap:.6rem;padding:14px 28px;border-radius:50px;font-family:'Lato',sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;letter-spacing:.04em}
+.cta-btn-wpp{background:var(--azul);color:var(--ouro)}
+.cta-btn-wpp:hover{background:#0d1740;transform:translateY(-2px)}
+.cta-btn-email{background:transparent;color:var(--azul);border:2px solid var(--azul)}
+.cta-btn-email:hover{background:var(--azul);color:var(--ouro);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--azul);text-align:center;padding:2rem 1rem;border-top:2px solid rgba(239,173,76,.3)}
+footer img{width:80px;opacity:.6;margin-bottom:.6rem}
+footer p{font-size:.8rem;color:var(--creme);opacity:.5}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:500px){
+  .beneficios-grid,.perfil-grid{grid-template-columns:1fr}
+  .cta-botoes{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-logo" src="LOGO.png" alt="Pão & Tradição">
+  <h1>Trabalhe Conosco</h1>
+  <span class="hero-sub">Pão & Tradição — Nova Friburgo</span>
+  <div class="hero-divider"></div>
+  <p class="hero-texto">
+    Há mais de 20 anos fazemos parte da história de Nova Friburgo,
+    conectando pessoas a novas oportunidades.<br><br>
+    Com experiência, seriedade e um olhar humano, seguimos ajudando
+    a construir <em>histórias profissionais</em> e impulsionando o
+    desenvolvimento da nossa cidade.
+  </p>
+</section>
+
+<!-- BENEFÍCIOS -->
+<div class="beneficios-bg">
+  <div class="secao">
+    <div class="secao-titulo">Benefícios de fazer parte desta equipe</div>
+    <div class="beneficios-grid">
+      <div class="beneficio-card">
+        <span class="beneficio-icone">🥪</span>
+        <div class="beneficio-texto"><strong>Lanche fornecido</strong>Lanche diário fornecido pela empresa.</div>
+      </div>
+      <div class="beneficio-card">
+        <span class="beneficio-icone">🎂</span>
+        <div class="beneficio-texto"><strong>Aniversário especial</strong>Lanche especial no seu dia.</div>
+      </div>
+      <div class="beneficio-card">
+        <span class="beneficio-icone">🏋️</span>
+        <div class="beneficio-texto"><strong>Convênio academia</strong>Cuide da saúde com desconto.</div>
+      </div>
+      <div class="beneficio-card">
+        <span class="beneficio-icone">📚</span>
+        <div class="beneficio-texto"><strong>Convênio SESI</strong>Acesso a educação e cultura.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERFIL -->
+<div class="secao">
+  <div class="secao-titulo">O que esperamos dos nossos colaboradores</div>
+  <div class="perfil-grid">
+    <div class="perfil-item">
+      <div class="pi-icone">🤝</div>
+      <div class="pi-nome">Trabalho em equipe</div>
+    </div>
+    <div class="perfil-item">
+      <div class="pi-icone">📋</div>
+      <div class="pi-nome">Organização</div>
+    </div>
+    <div class="perfil-item">
+      <div class="pi-icone">⚡</div>
+      <div class="pi-nome">Agilidade</div>
+    </div>
+    <div class="perfil-item">
+      <div class="pi-icone">💪</div>
+      <div class="pi-nome">Comprometimento</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-bg">
+  <h2>Ficou interessado?</h2>
+  <p>Se você cumpre esses requisitos e quer fazer parte desta equipe, entre em contato com o nosso RH. Envie seu currículo ou agende uma entrevista!</p>
+  <div class="cta-botoes">
+    <a class="cta-btn cta-btn-wpp" href="https://wa.me/5522996227411?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20e%20saber%20mais%20sobre%20as%20vagas!" target="_blank">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.552 4.103 1.516 5.829L0 24l6.335-1.493A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.518-5.166-1.42l-.37-.22-3.762.887.948-3.662-.242-.379A9.966 9.966 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp do RH
+    </a>
+    <a class="cta-btn cta-btn-email" href="mailto:rh.paoetradicao11@gmail.com?subject=Currículo — Vaga Pão %26 Tradição">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Enviar currículo por e-mail
+    </a>
+  </div>
+</div>
+
+<footer>
+  <img src="LOGO.png" alt="Pão & Tradição">
+  <p>Pão & Tradição — Padaria & Confeitaria · Nova Friburgo</p>
+</footer>
+
+</body>
+</html>
